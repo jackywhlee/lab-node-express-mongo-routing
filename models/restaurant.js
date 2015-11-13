@@ -17,7 +17,6 @@ var Restaurant = mongoose.model('Restaurant', RestaurantSchema);
 
 module.exports = Restaurant;
 
-// var Restaurant = require("./models/restaurant");
 var district1 = require("./district");
 
 // var restaurant1 = new Restaurant({

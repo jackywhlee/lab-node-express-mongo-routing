@@ -49,9 +49,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// ############ YOU CAN ADD YOUR CODE BELOW ########
-// ###### HAPPY CODING  :) #########################
-
 //index
 router.get('/', function(req, res) {
   Restaurant.find({}, function (err, restaurants) {

@@ -19,6 +19,10 @@ html {
 .pager {
   padding: 8px;
 }
+
+.pic {
+  width: 239px;
+}
 /*input, button, select, textarea {
   margin-right: 20px;
 }

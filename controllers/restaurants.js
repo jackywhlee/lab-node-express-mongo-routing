@@ -1,16 +1,15 @@
 var express    = require('express'),
     router     = express.Router(),
-      // http://expressjs.com/4x/api.html#router
+      // http://expressjs.com/4x/api.html#router don't delete me!
     bodyParser = require('body-parser'),
-      // https://www.npmjs.com/package/body-parser
+      // https://www.npmjs.com/package/body-parser don't delete me!
     methodOverride = require('method-override');
-      // https://www.npmjs.com/package/method-override
+      // https://www.npmjs.com/package/method-override don't delete me!
 
 var Restaurant = require("../models/restaurant");
 
 //homepage
 router.get('/', function(req, res){
-  // console.log("test")
       res.render('about.html');
     });
 
