@@ -14,7 +14,9 @@ var router = express.Router();
 var port   = process.env.PORT || 3000;
 
 var moongoose = require('mongoose');
-moongoose.connect('mongodb://localhost/sushi-me-away');
+var mongoUri =  process.env.MONGOLAB_URI || 'mongodb://localhost/sushi-me-away';
+moongoose.connect(mongoUri);
+
 var Restaurant = require("./models/restaurant");
 var District = require("./models/district");
 
@@ -109,5 +111,5 @@ router.delete('/:id', function(req, res) {
 
 app.use(require('./controllers/restaurants'));
 app.use('/api/restaurants', router); //namespace
-app.listen(3000);
+app.listen(process.env.PORT || 3000 );
 console.log('Server has Awaken...');
