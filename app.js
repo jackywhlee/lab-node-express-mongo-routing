@@ -30,6 +30,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+app.engine('.html', require('ejs').renderFile);
 
 // development error handler
 // will print stacktrace
@@ -113,3 +114,4 @@ app.use(require('./controllers/restaurants'));
 app.use('/api/restaurants', router); //namespace
 app.listen(process.env.PORT || 3000 );
 console.log('Server has Awaken...');
+

@@ -8,6 +8,11 @@ var express    = require('express'),
 
 var Restaurant = require("../models/restaurant");
 
+router.get('/', function(req, res){
+  console.log("test")
+      res.render('about.html');
+    });
+
 router.get("/restaurants", function(req, res){
     Restaurant.find({}, function (err, restaurants) {
       res.render('restaurants/index', { restaurants: restaurants });
@@ -30,7 +35,7 @@ router.put("/restaurants/:id"), function(req, res){
     if (err){
       res.send("we f'ed up m8" +err)
     } else {
-      res.redirect('restaurants');
+      res.redirect('/restaurants');
     }
   }
 }
