@@ -1,0 +1,53 @@
+<fieldset>
+  <legend>Add a restaurant</legend>
+  <form method="POST" action="/restaurants">
+    <div class="form-group col-md-4">
+      <input name="restaurant[name]" class="form-control" placeholder="Name"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[website]"  class="form-control" placeholder="Website url"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[address]"  class="form-control" placeholder="Address"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[description]"  class="form-control" placeholder="Description"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[price_range]"  class="form-control" placeholder="Price range"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[image_url]"  class="form-control" placeholder="Image url"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[telephone]"  class="form-control" placeholder="Telephone number"/>
+    </div>
+    <div class="form-group col-md-4">
+      <input name="restaurant[district]"  class="form-control" placeholder="District"/>
+    </div>
+    <div class="form-group col-md-4">
+      <button class="btn btn-success col-md-12">Add a Restaurant</button>
+    </div>
+  </form>
+</fieldset>
+
+<ul>
+<% restaurants.forEach( function(restaurant){ %>
+  <li>
+    <h2><%= restaurant.name %></h2>
+    <ul>
+      <li><b>Name :         </b> <%= restaurant.name %></li>
+      <li><b>Website :      </b> <%= restaurant.website %></li>
+      <li><b>Address :      </b> <%= restaurant.address %></li>
+      <li><b>Description :  </b> <%= restaurant.description %></li>
+      <li><b>Price :        </b> <%= restaurant.price_range %></li>
+      <li><b>Image :        </b> <%= restaurant.image_url %></li>
+      <li><b>Telephone :    </b> <%= restaurant.telephone %></li>
+      <li><b>District :     </b> <%= restaurant.district %></li>
+    </ul>
+  </li>
+
+<% }) %>
+
+</ul>
+
