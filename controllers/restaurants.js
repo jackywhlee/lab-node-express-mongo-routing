@@ -15,6 +15,7 @@ router.get("/restaurants", function(req, res){
   })
 
 router.post("/restaurants", function(req, res){
+  console.log('restaurant CREATE');
   Restaurant.create(req.body.restaurant, function (err, restaurant) {
     if (err){
       res.send("something wrong happened"+ err)
@@ -34,6 +35,18 @@ router.put("/restaurants/:id"), function(req, res){
   }
 }
 
+router.delete('restaurants/:id', function (req, res) {
+  console.log('hit the delete method');
+  Restaurant.findById(req.params.id, function(err, restaurant){
+    if (err) res.send(err)
+
+    restaurant.remove(function(err){
+      if (err) res.send(err)
+
+      res.redirect('restaurants');
+    })
+  })
+});
 
 
 module.exports = router;

@@ -32,22 +32,23 @@
 </fieldset>
 
 <ul>
-<% restaurants.forEach( function(restaurant){ %>
-  <li>
-    <h2><%= restaurant.name %></h2>
-    <ul>
-      <li><b>Name :         </b> <%= restaurant.name %></li>
-      <li><b>Website :      </b> <%= restaurant.website %></li>
-      <li><b>Address :      </b> <%= restaurant.address %></li>
-      <li><b>Description :  </b> <%= restaurant.description %></li>
-      <li><b>Price :        </b> <%= restaurant.price_range %></li>
-      <li><b>Image :        </b> <%= restaurant.image_url %></li>
-      <li><b>Telephone :    </b> <%= restaurant.telephone %></li>
-      <li><b>District :     </b> <%= restaurant.district %></li>
-    </ul>
-  </li>
-
-<% }) %>
-
+  <% restaurants.forEach( function(restaurant){ %>
+    <li>
+      <h2><%= restaurant.name %></h2>
+      <ul>
+        <li><b>Name :         </b> <%= restaurant.name %></li>
+        <li><b>Website :      </b> <%= restaurant.website %></li>
+        <li><b>Address :      </b> <%= restaurant.address %></li>
+        <li><b>Description :  </b> <%= restaurant.description %></li>
+        <li><b>Price :        </b> <%= restaurant.price_range %></li>
+        <li><b>Image :        </b> <%= restaurant.image_url %></li>
+        <li><b>Telephone :    </b> <%= restaurant.telephone %></li>
+        <li><b>District :     </b> <%= restaurant.district %></li>
+      </ul>
+      <form method="POST" action="restaurants/<%= restaurant._id %>?_method=DELETE">
+        <button type="submit">Delete Restaurant</button>
+      </form>
+    </li>
+  <% }) %>
 </ul>
 
