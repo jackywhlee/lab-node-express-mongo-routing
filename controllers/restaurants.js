@@ -8,8 +8,9 @@ var express    = require('express'),
 
 var Restaurant = require("../models/restaurant");
 
+//homepage
 router.get('/', function(req, res){
-  console.log("test")
+  // console.log("test")
       res.render('about.html');
     });
 
@@ -17,7 +18,7 @@ router.get("/restaurants", function(req, res){
     Restaurant.find({}, function (err, restaurants) {
       res.render('restaurants/index', { restaurants: restaurants });
     });
-  })
+  });
 
 router.post("/restaurants", function(req, res){
   console.log('restaurant CREATE');
@@ -30,15 +31,15 @@ router.post("/restaurants", function(req, res){
   });
 })
 
-router.put("/restaurants/:id"), function(req, res){
-  Restaurant.findByIdAndUpdate(req.params.id), function (err, restaurant){
-    if (err){
-      res.send("we f'ed up m8" +err)
-    } else {
-      res.redirect('/restaurants');
-    }
-  }
-}
+// router.put("/restaurants/:id"), function(req, res){
+//   Restaurant.findByIdAndUpdate(req.params.id), function (err, restaurant){
+//     if (err){
+//       res.send("we f'ed up m8" +err)
+//     } else {
+//       res.redirect('/restaurants');
+//     }
+//   }
+// }
 
 router.delete('/restaurants/:id', function (req, res) {
   console.log('hit the delete method');
@@ -52,6 +53,5 @@ router.delete('/restaurants/:id', function (req, res) {
     })
   })
 });
-
 
 module.exports = router;
