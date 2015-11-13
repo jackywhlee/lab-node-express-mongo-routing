@@ -35,7 +35,7 @@ router.put("/restaurants/:id"), function(req, res){
   }
 }
 
-router.delete('restaurants/:id', function (req, res) {
+router.delete('/restaurants/:id', function (req, res) {
   console.log('hit the delete method');
   Restaurant.findById(req.params.id, function(err, restaurant){
     if (err) res.send(err)
@@ -43,7 +43,7 @@ router.delete('restaurants/:id', function (req, res) {
     restaurant.remove(function(err){
       if (err) res.send(err)
 
-      res.redirect('restaurants');
+      res.redirect('/restaurants');
     })
   })
 });

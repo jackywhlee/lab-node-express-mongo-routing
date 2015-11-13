@@ -20,20 +20,20 @@ module.exports = Restaurant;
 // var Restaurant = require("./models/restaurant");
 var district1 = require("./district");
 
-// var restaurant1 = new Restaurant({
-//   name: "Genki Sushi",
-//   website: "www.genkisushi.com.hk",
-//   address: "Shop 241, 2/F, Shun Tak Centre, 168-200 Connaught Road Central, Sheung Wan",
-//   description: "wahhh wahhh wahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
-//   price_range: "$101-$200",
-//   image_url: "http://i.imgur.com/WA7UWAA.jpg",
-//   telephone: "2540 8929",
-//   district: district1._id,
-//   created_at: new Date()
-// });
+var restaurant1 = new Restaurant({
+  name: "Genki Sushi",
+  website: "www.genkisushi.com.hk",
+  address: "Shop 241, 2/F, Shun Tak Centre, 168-200 Connaught Road Central, Sheung Wan",
+  description: "wahhh wahhh wahhhhhhhhhhhhhhhhhhhhhhhh",
+  price_range: "$101-$200",
+  image_url: "http://i.imgur.com/WA7UWAA.jpg",
+  telephone: "2540 8929",
+  district: "Sheung Wan",
+  created_at: new Date()
+});
 
-// restaurant1.save(function(err) {
-//   if (err) console.log(err);
-//   console.log('Restaurant created!');
-// });
+restaurant1.save(function(err) {
+  if (err) console.log(err);
+  console.log('Restaurant created!');
+});
 

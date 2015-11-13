@@ -46,7 +46,7 @@
         <li><b>District :     </b> <%= restaurant.district %></li>
       </ul>
       <form method="POST" action="restaurants/<%= restaurant._id %>?_method=DELETE">
-        <button type="submit">Delete Restaurant</button>
+        <button class="btn btn-danger" type="submit">Delete Restaurant</button>
       </form>
     </li>
   <% }) %>
